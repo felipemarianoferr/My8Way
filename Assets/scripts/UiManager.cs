@@ -1,24 +1,28 @@
 using UnityEngine;
+using TMPro;
 
 public class UiManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     public GameObject endGamePanel;
+    [SerializeField] private TextMeshProUGUI finalTimeText;
+    [SerializeField] private GameObject timerText;
 
-    void Start()
-    {
-        
-    }
+    private bool shownOnce;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameController.gameOver)
+        if (GameController.gameOver && !shownOnce)
         {
+            shownOnce = true;
 
-            endGamePanel.SetActive(true);
-            
+            if (endGamePanel != null) endGamePanel.SetActive(true);
+            if (timerText != null) timerText.SetActive(false);
+
+            if (finalTimeText != null)
+            {
+                string formatted = GameTimer.FormatClock(GameController.finalElapsed);
+                finalTimeText.text = "Tempo total: " + formatted;
+            }
         }
     }
 }
