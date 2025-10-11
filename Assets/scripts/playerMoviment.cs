@@ -24,13 +24,17 @@ public class playerMoviment : MonoBehaviour
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-
-        if (other.tag == "coletavel"){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "coletavel")
+        {
             audio.Play();
-            GameController.Collect();   
+
+            if (GameTimer.Instance != null)
+                GameTimer.Instance.AddSeconds(3f);   // primeiro aplica o bônus
+
+            GameController.Collect();                 // depois registra a coleta
             Destroy(other.gameObject);
         }
-
     }
 }

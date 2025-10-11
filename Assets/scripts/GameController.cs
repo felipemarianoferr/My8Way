@@ -16,7 +16,7 @@ public class GameController
 
     public static void Init()
     {
-        collectableCount = 4;
+        collectableCount = 7;
 
         timeUp = false;
         finalElapsed = 0f;
