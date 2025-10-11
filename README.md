@@ -1,5 +1,7 @@
 Jogo: Ultima Carga
 
+Link para o jogo: https://fmfgame.itch.io/ltima-carga
+
 Use W A S D para mover o drone. Colete as estrelas, evite os asteroides azuis, a bateria cai com o tempo. Pegue todas as estrelas antes que a bateria (tempo) acabe, cada estrela dá tempo extra.
 
 Autor: Felipe Mariano Ferreira
