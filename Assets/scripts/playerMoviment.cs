@@ -32,7 +32,7 @@ public class playerMoviment : MonoBehaviour
 
             if (GameTimer.Instance != null)
                 GameTimer.Instance.AddSeconds(3f);   // primeiro aplica o bônus
-
+            if (CollectedHUD.Instance != null) CollectedHUD.Instance.AddOne();
             GameController.Collect();                 // depois registra a coleta
             Destroy(other.gameObject);
         }
